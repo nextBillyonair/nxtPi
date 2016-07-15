@@ -1,0 +1,19 @@
+* commit c168663 (HEAD, origin/master, origin/HEAD, master)
+| Author: Bill Watson <wwatso13@jhu.edu>
+| Date:   22 hours ago
+| 
+|     Update README.md
+|  
+* commit 9f8a0eb
+| Author: Bill Watson <wwatso13@jhu.edu>
+| Date:   22 hours ago
+| 
+|     In Case Of Fire
+|     
+|     streamline git commands with one bash file
+|  
+* commit ae2bf14
+  Author: Bill Watson <wwatso13@jhu.edu>
+  Date:   22 hours ago
+  
+      Initial commit
