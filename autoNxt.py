@@ -101,7 +101,7 @@ try:
         print "Ultrasonic: ", us.get_distance()
         
         if us.get_distance() < 20 or fronttouch.is_pressed():
-            if frontouch.is_pressed():
+            if fronttouch.is_pressed():
                 both.turn(100, 90, False) # Backup # Maybe only when TOuched?
                 both.brake()
                 if backtouch.is_pressed():

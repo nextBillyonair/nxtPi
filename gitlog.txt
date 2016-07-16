@@ -1,12 +1,26 @@
-* commit 11c1174 (HEAD, origin/master, origin/HEAD, master)
+* commit da962f0 (HEAD, origin/master, origin/HEAD, master)
 | Author: Bill Watson <wwatso13@jhu.edu>
-| Date:   6 minutes ago
+| Date:   68 minutes ago
+| 
+|     Create shutdown.sh
+|     
+|     I can never remember this
+|  
+* commit 2125ee9
+| Author: Bill Watson <wwatso13@jhu.edu>
+| Date:   70 minutes ago
+| 
+|     Update Files In Case Of Fire at 16:24:46 - 07/16/16
+|  
+* commit 11c1174
+| Author: Bill Watson <wwatso13@jhu.edu>
+| Date:   76 minutes ago
 | 
 |     Update Files In Case Of Fire at 16:18:33 - 07/16/16
 |  
 * commit ab7ce19
 | Author: Bill Watson <wwatso13@jhu.edu>
-| Date:   21 hours ago
+| Date:   22 hours ago
 | 
 |     Update Files In Case Of Fire at 19:33:30 - 07/15/16
 |  
