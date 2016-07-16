@@ -31,6 +31,8 @@ rightboth = nxt.SynchronizedMotors(left, right, 100)
 leftboth = nxt.SynchronizedMotors(right, left, 100)
 color = Color20(brick, PORT_2)
 us = Ultrasonic(brick, PORT_1)
+fronttouch = Touch(brick, PORT_3)
+backtouch = Touch(brick, PORT_4)
 colorMode = 0
 
 """
@@ -93,11 +95,12 @@ def usage():
     print "s - MOVE REVERSE"
     print "a - MOVE LEFT"
     print "d - MOVE RIGHT"
-    print "q - CAMERA MOTOR UP"
-    print "e - CAMERA MOTOR DOWN"
+    print "q - CAMERA MOTOR LEFT"
+    print "e - CAMERA MOTOR RIGHT"
     print "l - LIGHT TOGGLE"
     print "u - ULTRASONIC SENSOR"
     print "o - OBSERVE REFELCTED LIGHT"
+    print "k - TOUCH SENSOR STATUS"
     print "h - HELP"
 
 
@@ -111,13 +114,19 @@ while ch != '~':
     ch = getch()
  
     if ch == 'w': # Add Ultrasonic check here for maybe 10
-        print "Forwards"
-        both.turn(-100,180, False)
-        both.brake()
-    elif ch == 's': # Add Ultrasonic check here for maybe 10
-        print "Backwards"
-        both.turn(100,180, False)
-        both.brake()
+        if us.get_distance() < 15 or fronttouch.is_pressed():
+            print "Not enough room forward to move."
+        else:
+            print "Forwards"
+            both.turn(-100,180, False)
+            both.brake()
+    elif ch == 's':
+        if backtouch.is_pressed():
+            print "Object Blocking Path"
+        else:
+            print "Backwards"
+            both.turn(100,180, False)
+            both.brake()
     elif ch == 'a':
         print "Left"
         leftboth.turn(-100,90,False)
@@ -139,7 +148,10 @@ while ch != '~':
     elif ch == 'u':
         print 'Ultrasonic: ', us.get_distance()
     elif ch == 'o':
-        print "Reflected Light: " + str(color.get_color()) 
+        print "Reflected Light: " + str(color.get_color())
+    elif ch == 'k':
+        print "Front Touch", fronttouch.is_pressed()
+        print "Back Touch", backtouch.is_pressed()
 
         
 color.set_light_color(COLORNONE)
