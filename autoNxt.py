@@ -28,6 +28,8 @@ rightboth = nxt.SynchronizedMotors(left, right, 100)
 leftboth = nxt.SynchronizedMotors(right, left, 100)
 color = Color20(brick, PORT_2)
 us = Ultrasonic(brick, PORT_1)
+fronttouch = Touch(brick, PORT_3)
+backtouch = Touch(brick, PORT_4)
 colorMode = 0
 
 
@@ -97,9 +99,14 @@ try:
     while True:
         #ch = getch()
         print "Ultrasonic: ", us.get_distance()
-        if us.get_distance() < 30: # or Touch sesnor pressed?
-            both.turn(100, 90, False) # Backup # Maybe only when TOuched?
-            both.brake()
+        
+        if us.get_distance() < 20 or fronttouch.is_pressed():
+            if frontouch.is_pressed():
+                both.turn(100, 90, False) # Backup # Maybe only when TOuched?
+                both.brake()
+                if backtouch.is_pressed():
+                    both.turn(-100, 60, False)
+                    both.brake()
             usMotor.turn(100, 90)
             leftUS = us.get_distance()
             usMotor.turn(-100, 180)
@@ -112,6 +119,7 @@ try:
                 rightboth.turn(100, 90, False)
                 rightboth.brake()
         else:
+            # May be change this to run?
             both.turn(-100, 180, False)   # Forward Unto Dawn
             both.brake()
         
