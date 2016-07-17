@@ -120,87 +120,59 @@ while ch != '~':
             print "Not enough room forward to move."
         else:
             print "Forwards"
+            both.run(-100)
             while True:
                 try:
-                    both.run(-100)
-                    ch = getch()
+                    if us.get_distance() > 20 and not (fronttouch.is_pressed()):
+                        continue
+                    else:
+                        both.idle()
+                        break
                 except KeyboardInterrupt:
-                    both.brake()
+                    both.idle()
                     break
-                
-                #ch = getch()
-            #both.brake()
     elif ch == 's':
         if backtouch.is_pressed():
             print "Object Blocking Path"
         else:
             print "Backwards"
+            both.run(100)
             while True:
                 try:
-                    both.run(100)
-                    ch = getch()
+                    if backtouch.is_pressed():
+                        both.brake()
+                        break
+                    else:
+                        continue
                 except KeyboardInterrupt:
                     both.brake()
                     break
-            """while ch == 's':
-                both.run(100)
-                ch = getch()
-            both.brake()"""
     elif ch == 'a':
         print "Left"
+        leftboth.run(90)
         while True:
                 try:
-                    leftboth.run(90)
-                    ch = getch()
+                    continue
                 except KeyboardInterrupt:
                     leftboth.brake()
                     break
-        """
-        while ch == 'a':
-            leftboth.run(90)
-            ch = getch()
-        leftboth.brake()"""
     elif ch == 'd':
         print "Right"
+        rightboth.run(90)
         while True:
                 try:
-                    rightboth.run(90)
-                    ch = getch()
+                    continue
                 except KeyboardInterrupt:
                     rightboth.brake()
                     break
-        """while ch == 'd':
-            rightboth.run(90)
-            ch = getch()
-        rightboth.brake()"""
     elif ch == 'q':
         print "Camera Mtr Up"
-        while True:
-                try:
-                    cameraMtr.run(70)
-                    ch = getch()
-                except KeyboardInterrupt:
-                    cameraMtr.brake()
-                    break
-                   """
-        while ch == 's':
-            cameraMtr.run(70)
-            ch = getch()
-        cameraMtr.brake()"""
+        cameraMtr.turn(70,90, False)
+        cameraMtr.brake()
     elif ch == 'e':
         print "Camera Mtr Down"
-        while True:
-                try:
-                    cameraMtr.run(70)
-                    ch = getch()
-                except KeyboardInterrupt:
-                    camera.brake()
-                    break
-        """
-        while ch == 'e':
-            cameraMtr.run(-70)
-            ch = getch()
-        cameraMtr.brake()"""
+        cameraMtr.turn(-70, 90, False)
+        cameraMtr.brake()
     elif ch == 'l':
         changeColor()
     elif ch == 'h':

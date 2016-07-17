@@ -1,12 +1,46 @@
-* commit c206984 (HEAD, origin/master, origin/HEAD, master)
+* commit 31b13ca (HEAD, origin/master, origin/HEAD, master)
 | Author: Bill Watson <wwatso13@jhu.edu>
-| Date:   3 hours ago
+| Date:   31 minutes ago
+| 
+|     Update nxtRobot.py
+|     
+|     TEST CHANGES
+|  
+* commit 60fc869
+| Author: Bill Watson <wwatso13@jhu.edu>
+| Date:   39 minutes ago
+| 
+|     Update autoNxt.py
+|     
+|     NEEDS TEST
+|  
+* commit 8927763
+| Author: Bill Watson <wwatso13@jhu.edu>
+| Date:   12 hours ago
+| 
+|     Update nxtRobot.py
+|  
+* commit 01ba612
+| Author: Bill Watson <wwatso13@jhu.edu>
+| Date:   14 hours ago
+| 
+|     Update nxtRobot.py
+|  
+* commit 90ad596
+| Author: Bill Watson <wwatso13@jhu.edu>
+| Date:   14 hours ago
+| 
+|     Update Files In Case Of Fire at 20:31:53 - 07/16/16
+|  
+* commit c206984
+| Author: Bill Watson <wwatso13@jhu.edu>
+| Date:   17 hours ago
 | 
 |     Update Files In Case Of Fire at 17:34:59 - 07/16/16
 |  
 * commit da962f0
 | Author: Bill Watson <wwatso13@jhu.edu>
-| Date:   4 hours ago
+| Date:   19 hours ago
 | 
 |     Create shutdown.sh
 |     
@@ -14,31 +48,31 @@
 |  
 * commit 2125ee9
 | Author: Bill Watson <wwatso13@jhu.edu>
-| Date:   4 hours ago
+| Date:   19 hours ago
 | 
 |     Update Files In Case Of Fire at 16:24:46 - 07/16/16
 |  
 * commit 11c1174
 | Author: Bill Watson <wwatso13@jhu.edu>
-| Date:   4 hours ago
+| Date:   19 hours ago
 | 
 |     Update Files In Case Of Fire at 16:18:33 - 07/16/16
 |  
 * commit ab7ce19
 | Author: Bill Watson <wwatso13@jhu.edu>
-| Date:   25 hours ago
+| Date:   2 days ago
 | 
 |     Update Files In Case Of Fire at 19:33:30 - 07/15/16
 |  
 * commit c168663
 | Author: Bill Watson <wwatso13@jhu.edu>
-| Date:   2 days ago
+| Date:   3 days ago
 | 
 |     Update README.md
 |  
 * commit 9f8a0eb
 | Author: Bill Watson <wwatso13@jhu.edu>
-| Date:   2 days ago
+| Date:   3 days ago
 | 
 |     In Case Of Fire
 |     
@@ -46,6 +80,6 @@
 |  
 * commit ae2bf14
   Author: Bill Watson <wwatso13@jhu.edu>
-  Date:   2 days ago
+  Date:   3 days ago
   
       Initial commit
