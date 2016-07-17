@@ -118,22 +118,35 @@ while ch != '~':
             print "Not enough room forward to move."
         else:
             print "Forwards"
-            both.turn(-100,180, False)
+            while ch == 'w':
+                both.run(-100)#,180, False)
+                ch = getch()
+                #sleep(1)
             both.brake()
     elif ch == 's':
         if backtouch.is_pressed():
             print "Object Blocking Path"
         else:
             print "Backwards"
-            both.turn(100,180, False)
+            while ch == 's':
+                both.run(100)#,180, False)
+                ch = getch()
+            #sleep(1)
             both.brake()
     elif ch == 'a':
         print "Left"
-        leftboth.turn(-100,90,False)
+        while ch == 'a':
+            leftboth.run(90)
+            ch = getch()
+        #leftboth.run(-100)#,180,False)
+        #sleep(.5)
         leftboth.brake()
     elif ch == 'd':
         print "Right"
-        rightboth.turn(100,90,False)
+        while ch == 'd':
+            rightboth.run(90)#,180,False)
+            ch = getch()
+        #sleep(.5)
         rightboth.brake()
     elif ch == 'q':
         print "Camera Mtr Up"
