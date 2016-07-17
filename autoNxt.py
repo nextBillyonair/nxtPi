@@ -97,6 +97,37 @@ print "Ready..."
 
 try:
     while True:
+        print "Ultrasonic: ", us.get_distance()
+        both.run(-100)
+        while True:
+            if us.get_distance() < 20 or fronttouch.is_pressed():
+                both.brake()
+                if fronttouch.is_pressed():
+                    both.run(100)
+                    sleep(1)
+                    both.brake()
+                    if backtouch.is_pressed():
+                        both.run(100)
+                        sleep(.5)
+                        both.brake()
+                usMotor.turn(100,90)
+                leftUS = us.get_distance()
+                usMotor.turn(-100, 180)
+                rightUS = us.get_distance()
+                usMotor.turn(100, 90)
+                if leftUS > rightUS:
+                    leftboth.run(100)
+                    sleep(1)
+                    leftboth.brake()
+                else:
+                    rightboth.run(100)
+                    sleep(1)
+                    rightboth.brake()
+                    
+                    
+    """            
+        
+    while True:
         #ch = getch()
         print "Ultrasonic: ", us.get_distance()
         
@@ -122,7 +153,7 @@ try:
             # May be change this to run?
             both.turn(-100, 180, False)   # Forward Unto Dawn
             both.brake()
-        
+        """
 except KeyboardInterrupt:
     print "INTERRUPTED!!"
 
