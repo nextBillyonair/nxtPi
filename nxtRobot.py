@@ -90,7 +90,7 @@ def changeColor():
 Usage Guidelines
 """
 def usage():
-    print "~ - QUIT"
+    print "\n~ - QUIT"
     print "w - MOVE FORWARD"
     print "s - MOVE REVERSE"
     print "a - MOVE LEFT"
@@ -102,6 +102,7 @@ def usage():
     print "o - OBSERVE REFELCTED LIGHT"
     print "k - TOUCH SENSOR STATUS"
     print "h - HELP"
+    print "\nNOTE: When moving a motor, pressing any other button than the direction will brake it\n"
 
 
 #######################################################
@@ -121,7 +122,6 @@ while ch != '~':
             while ch == 'w':
                 both.run(-100)#,180, False)
                 ch = getch()
-                #sleep(1)
             both.brake()
     elif ch == 's':
         if backtouch.is_pressed():
@@ -129,31 +129,33 @@ while ch != '~':
         else:
             print "Backwards"
             while ch == 's':
-                both.run(100)#,180, False)
+                both.run(100)
                 ch = getch()
-            #sleep(1)
             both.brake()
     elif ch == 'a':
         print "Left"
         while ch == 'a':
             leftboth.run(90)
             ch = getch()
-        #leftboth.run(-100)#,180,False)
-        #sleep(.5)
         leftboth.brake()
     elif ch == 'd':
         print "Right"
         while ch == 'd':
-            rightboth.run(90)#,180,False)
+            rightboth.run(90)
             ch = getch()
-        #sleep(.5)
         rightboth.brake()
     elif ch == 'q':
         print "Camera Mtr Up"
-        cameraMtr.turn(90, 60) #Test angle, maybe reduce
+        while ch == 's':
+            cameraMtr.run(70)
+            ch = getch()
+        cameraMtr.brake()
     elif ch == 'e':
         print "Camera Mtr Down"
-        cameraMtr.turn(-90, 60) # Test agnle, maybe reduce
+        while ch == 'e':
+            cameraMtr.run(-70)
+            ch = getch()
+        cameraMtr.brake()
     elif ch == 'l':
         changeColor()
     elif ch == 'h':
