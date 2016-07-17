@@ -3,6 +3,7 @@
  
 import nxt
 import sys
+import cv2
 import tty, termios
 from time import sleep
 import nxt.locator
@@ -120,7 +121,7 @@ while ch != '~':
         else:
             print "Forwards"
             while ch == 'w':
-                both.run(-100)#,180, False)
+                both.run(-100)
                 ch = getch()
             both.brake()
     elif ch == 's':
